@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList.jsx'
 
 function App() {
 
   // sets gallery list to state
-  let [ galleryList, setGalleryList ] = useState([];)
+  let [ galleryList, setGalleryList ] = useState([]);
 
   useEffect(() => {
-    getStudents()
+    getGallery()
   }, []);
 
   const getGallery = () => {
@@ -17,8 +18,8 @@ function App() {
       url: '/gallery'
     })
       .then((response) => {
-        console.log(response.body);
-        setGalleryList(response.body);
+        console.log('in getGallery: ', response.data);
+        setGalleryList(response.data);
       })
       .catch((error) => {
         console.log('error getting gallery: ', error);
@@ -31,7 +32,7 @@ function App() {
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
         <GalleryList
-          getGallery={getGallery}
+          galleryList={galleryList}
         />
       </div>
     );

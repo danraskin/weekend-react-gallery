@@ -1,5 +1,7 @@
-export default function () {
+export default function ({galleryItem}) {
     return (
-        console.log('in GalleryItem.jsx')
+        <div className="itemCard">
+            <img className="itemImg" src={galleryItem.path} />
+        </div>
     );
 }

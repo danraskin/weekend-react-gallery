@@ -1,12 +1,16 @@
 import GalleryItem from '../GalleryItem/GalleryItem.jsx'
 
-export default function GalleryList ({getGallery}) {
-    console.log('in GalleryList.jsx');
+export default function GalleryList ({galleryList}) {
     return (
         <>
-            <p>Gallery goes here</p>
-            <GalleryItem />
-            <img src="images/goat_small.jpg"/>
+            <div>EATING FILTH AND TRANSFORMING IT
+                {galleryList.map(item => (
+                        <GalleryItem
+                            galleryItem={item}
+                            key={item.id}
+                        />
+                ))}
+            </div>
         </>
     );
 }
