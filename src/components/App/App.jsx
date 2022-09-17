@@ -24,15 +24,29 @@ function App() {
       .catch((error) => {
         console.log('error getting gallery: ', error);
       })
-}
+  }
+
+  const likeItem = (id) => {
+    axios({
+      method: "PUT",
+      url: `/gallery/like/${id}`
+    })
+      .then((response) => {
+        console.log('in likeItem: ', response);
+        getGallery();
+      })
+  }
 
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Gallery of My Life</h1>
+          <h1 className="App-title">EATING FILTH AND TRANSFORMING IT</h1>
+          <h3>with white intentions into black compassion</h3>
+          <p>- John Giorno</p>
         </header>
         <GalleryList
           galleryList={galleryList}
+          likeItem={likeItem}
         />
       </div>
     );

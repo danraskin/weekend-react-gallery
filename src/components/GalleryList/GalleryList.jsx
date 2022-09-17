@@ -1,11 +1,12 @@
 import GalleryItem from '../GalleryItem/GalleryItem.jsx'
 
-export default function GalleryList ({galleryList}) {
+export default function GalleryList ({galleryList, likeItem}) {
     return (
         <>
-            <div>EATING FILTH AND TRANSFORMING IT
+            <div id="itemGallery">
                 {galleryList.map(item => (
                         <GalleryItem
+                            likeItem={likeItem}
                             galleryItem={item}
                             key={item.id}
                         />
