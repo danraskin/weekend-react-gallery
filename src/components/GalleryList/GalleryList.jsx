@@ -6,9 +6,10 @@ export default function GalleryList ({galleryList, likeItem}) {
             <div id="itemGallery">
                 {galleryList.map(item => (
                         <GalleryItem
+                            key={item.id}
                             likeItem={likeItem}
                             galleryItem={item}
-                            key={item.id}
+                            
                         />
                 ))}
             </div>

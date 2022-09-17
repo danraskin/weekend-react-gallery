@@ -1,3 +1,7 @@
+/* * {
+  outline: solid blue 1px;
+} */
+
 .App {
   text-align: center;
 }
@@ -16,15 +20,21 @@
 #itemGallery {
   display: flex;
   flex-direction:row;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  margin: 2% 5%;
 }
 
 .itemCard {
-  height: 200px;
-  width: 200px;
+  width: 100px;
   font-size: .75em;
+  border: solid 5px red;
+  margin-bottom: 5%;
 }
 
-.itemImg{ 
-  max-height:100px;
-  max-width: 100px;
+.text, .image {
+  height:100px;
+  width:100px;
+  margin: none;
 }
+
